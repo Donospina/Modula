@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="es" class="dark">
 <head>
@@ -222,6 +221,523 @@
         <!-- ================= PAGE 3: 3D CUSTOMIZER ================= -->
         <section id="page-customizer" class="page-view hidden py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-6">
             <div>
-                <span class="text-modula-cyan font-mono text-xs uppercase font-bold">Personalizador Inter
-```
+                <span class="text-modula-cyan font-mono text-xs uppercase font-bold">Personalizador Interactivo</span>
+                <h1 class="text-3xl font-bold text-white">Configura tu Pieza 3D</h1>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <!-- 3D Canvas Box -->
+                <div class="lg:col-span-7 bg-modula-card border border-modula-border rounded-2xl p-4 flex flex-col items-center justify-center relative min-h-[380px]">
+                    <div id="three-container" class="w-full h-[320px] cursor-grab"></div>
+                    <div class="text-xs text-slate-400 font-mono mt-2">Arrastra con el mouse para rotar en 3D</div>
+                </div>
+
+                <!-- Customizer Options -->
+                <div class="lg:col-span-5 bg-modula-card border border-modula-border rounded-2xl p-6 space-y-5">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-300 uppercase mb-2">Material</label>
+                        <select id="custom-material-select" onchange="updateCustomizerPrice()" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-sm text-slate-200">
+                            <option value="PLA Premium" data-price="35000">PLA Silk (35.000 COP)</option>
+                            <option value="TPU Flexible" data-price="45000">TPU Flexible (45.000 COP)</option>
+                            <option value="PETG Industrial" data-price="50000">PETG Industrial (50.000 COP)</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-slate-300 uppercase mb-2">Color del Filamento</label>
+                        <div class="flex gap-3">
+                            <button onclick="set3DColor('#00E5FF')" class="w-8 h-8 rounded-full bg-[#00E5FF] ring-2 ring-white"></button>
+                            <button onclick="set3DColor('#3B82F6')" class="w-8 h-8 rounded-full bg-[#3B82F6]"></button>
+                            <button onclick="set3DColor('#10B981')" class="w-8 h-8 rounded-full bg-[#10B981]"></button>
+                            <button onclick="set3DColor('#F59E0B')" class="w-8 h-8 rounded-full bg-[#F59E0B]"></button>
+                            <button onclick="set3DColor('#F8FAFC')" class="w-8 h-8 rounded-full bg-[#F8FAFC]"></button>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-slate-300 uppercase mb-2">Nombre o Texto Grabado</label>
+                        <input type="text" id="custom-text-input" placeholder="Tu nombre o texto" value="MODULA" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-sm text-slate-200 font-mono">
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-800 flex items-center justify-between">
+                        <div>
+                            <div class="text-xs text-slate-400">Precio Personalizado:</div>
+                            <div id="custom-price-display" class="text-2xl font-bold text-modula-cyan font-mono">$35.000 COP</div>
+                        </div>
+                        <button onclick="addCustomToCart()" class="px-6 py-3 rounded-xl bg-modula-cyan text-slate-950 font-bold hover:shadow-lg transition-all">
+                            Agregar al Carrito
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= PAGE 4: SHIPPING ESTIMATOR ================= -->
+        <section id="page-shipping" class="page-view hidden py-12 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+            <div class="bg-modula-card border border-modula-border rounded-2xl p-6 space-y-6">
+                <h2 class="text-2xl font-bold text-white">Cotizador de Envíos en Colombia</h2>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-300 uppercase mb-2">Ciudad / Municipio Destino</label>
+                        <select id="ship-city" onchange="calculateShip()" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-sm text-slate-200">
+                            <option value="bogota">Bogotá D.C.</option>
+                            <option value="medellin">Medellín</option>
+                            <option value="cali">Cali</option>
+                            <option value="zipacon">Zipacón / Cachipay</option>
+                            <option value="otra">Otras Ciudades Nacionales</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-300 uppercase mb-2">Transportadora</label>
+                        <select class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-sm text-slate-200">
+                            <option>Interrapidísimo</option>
+                            <option>Servientrega</option>
+                            <option>Coordinadora</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="bg-slate-950 p-6 rounded-xl flex justify-between items-center border border-slate-800">
+                    <div>
+                        <div class="text-xs text-slate-400">Tiempo de Entrega:</div>
+                        <div id="ship-time-res" class="text-base font-bold text-white">1 - 2 Días Hábiles</div>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-xs text-slate-400">Costo de Envío:</div>
+                        <div id="ship-cost-res" class="text-2xl font-bold text-modula-cyan font-mono">$10.500 COP</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- ================= EDITABLE ADMIN PANEL MODAL ================= -->
+    <div id="admin-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/90 backdrop-blur-md hidden">
+        <div class="bg-modula-card border border-amber-500/40 rounded-2xl max-w-3xl w-full max-h-[85vh] overflow-y-auto p-6 space-y-6">
+            
+            <div class="flex justify-between items-center border-b border-slate-800 pb-4">
+                <div class="flex items-center gap-2 text-amber-400">
+                    <i class="fa-solid fa-pen-to-square text-xl"></i>
+                    <h3 class="text-lg font-bold">Panel Editor de Precios y Configuración MODULA</h3>
+                </div>
+                <button onclick="closeAdminModal()" class="text-slate-400 hover:text-white"><i class="fa-solid fa-xmark text-lg"></i></button>
+            </div>
+
+            <div class="space-y-4">
+                <h4 class="text-sm font-bold text-white uppercase tracking-wider border-b border-slate-800 pb-2">1. Editar Lista de Productos y Precios</h4>
+                
+                <div id="admin-products-list" class="space-y-3">
+                    <!-- Dynamic inputs loaded via JavaScript -->
+                </div>
+
+                <button onclick="addNewProductToCatalog()" class="w-full py-2 bg-slate-900 border border-dashed border-slate-700 text-modula-cyan text-xs font-bold rounded-xl hover:border-modula-cyan">
+                    + Agregar Nuevo Producto
+                </button>
+
+                <h4 class="text-sm font-bold text-white uppercase tracking-wider border-b border-slate-800 pb-2 pt-4">2. Editar Información General de la Empresa</h4>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs text-slate-400 mb-1">Frase / Eslogan Bajo MODULA</label>
+                        <input type="text" id="edit-slogan-input" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2 text-xs text-slate-200">
+                    </div>
+                    <div>
+                        <label class="block text-xs text-slate-400 mb-1">WhatsApp Principal</label>
+                        <input type="text" id="edit-whatsapp-input" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2 text-xs text-slate-200">
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-4 border-t border-slate-800 flex justify-between items-center">
+                <button onclick="resetDefaultData()" class="text-xs text-red-400 hover:underline">Restablecer Valores Iniciales</button>
+                <button onclick="saveAdminChanges()" class="px-6 py-2.5 bg-amber-500 text-slate-950 font-bold rounded-xl hover:bg-amber-400 text-xs">
+                    Guardar Cambios en la Web
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- ================= CART DRAWER ================= -->
+    <div id="cart-drawer" class="fixed inset-0 z-50 pointer-events-none opacity-0 transition-opacity duration-300">
+        <div class="absolute inset-0 bg-slate-950/80 pointer-events-auto" onclick="toggleCartModal()"></div>
+        <div class="fixed inset-y-0 right-0 max-w-full flex pl-10">
+            <div class="w-screen max-w-md bg-modula-card border-l border-modula-border pointer-events-auto flex flex-col p-6 space-y-6">
+                
+                <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+                    <h2 class="text-lg font-bold text-white">Carrito de Compras</h2>
+                    <button onclick="toggleCartModal()" class="text-slate-400"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+
+                <div id="cart-items-container" class="flex-grow overflow-y-auto space-y-3"></div>
+
+                <div class="border-t border-slate-800 pt-4 space-y-3">
+                    <div class="flex justify-between text-base font-bold text-white">
+                        <span>Total:</span>
+                        <span id="cart-total-display" class="font-mono text-modula-cyan">$0 COP</span>
+                    </div>
+                    <button onclick="openCheckout()" class="w-full py-3 bg-modula-cyan text-slate-950 font-bold rounded-xl">Proceder a Comprar por WhatsApp</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ================= FLOATING WHATSAPP BUTTON & ADVISOR SELECTOR ================= -->
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+        <!-- Advisor Popup Menu -->
+        <div id="wa-advisor-menu" class="hidden mb-3 bg-slate-900 border border-slate-800 rounded-2xl p-4 shadow-2xl w-64 space-y-3 backdrop-blur-md">
+            <div class="flex justify-between items-center border-b border-slate-800 pb-2">
+                <div class="text-xs font-bold text-white flex items-center gap-1.5">
+                    <i class="fa-brands fa-whatsapp text-emerald-400 text-sm"></i>
+                    <span>Contacta a un Asesor</span>
+                </div>
+                <button onclick="toggleWaMenu()" class="text-slate-400 hover:text-white text-xs"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            
+            <div class="space-y-2">
+                <!-- Asesor Ziram -->
+                <a href="https://wa.me/573504044246?text=Hola%20Asesor%20Ziram,%20quiero%20más%20información%20sobre%20MODULA" target="_blank" class="flex items-center gap-3 p-2.5 rounded-xl bg-slate-950 border border-slate-800 hover:border-emerald-500/50 transition-all group">
+                    <div class="w-9 h-9 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 flex items-center justify-center font-bold text-sm group-hover:bg-emerald-500 group-hover:text-slate-950 transition-all">
+                        <i class="fa-solid fa-user-gear"></i>
+                    </div>
+                    <div>
+                        <div class="text-xs font-bold text-white group-hover:text-emerald-400">Asesor Ziram</div>
+                        <div class="text-[10px] text-slate-400">+57 350 404 4246</div>
+                    </div>
+                </a>
+
+                <!-- Asesora Maribel -->
+                <a href="https://wa.me/573150612701?text=Hola%20Asesora%20Maribel,%20quiero%20más%20información%20sobre%20MODULA" target="_blank" class="flex items-center gap-3 p-2.5 rounded-xl bg-slate-950 border border-slate-800 hover:border-emerald-500/50 transition-all group">
+                    <div class="w-9 h-9 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 flex items-center justify-center font-bold text-sm group-hover:bg-emerald-500 group-hover:text-slate-950 transition-all">
+                        <i class="fa-solid fa-user-check"></i>
+                    </div>
+                    <div>
+                        <div class="text-xs font-bold text-white group-hover:text-emerald-400">Asesora Maribel</div>
+                        <div class="text-[10px] text-slate-400">+57 315 061 2701</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Main Trigger Button -->
+        <button onclick="toggleWaMenu()" class="w-14 h-14 bg-emerald-500 text-slate-950 rounded-full flex items-center justify-center text-2xl shadow-lg hover:scale-110 hover:bg-emerald-400 transition-all">
+            <i class="fa-brands fa-whatsapp"></i>
+        </button>
+    </div>
+
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 border-t border-modula-border py-8 px-4 text-center text-xs text-slate-500">
+        <div>© 2026 MODULA Colombia. Todos los derechos reservados.</div>
+        <div id="footer-slogan" class="text-modula-cyan font-mono font-bold mt-1">INNOVA, PERSONALIZA Y DISFRUTA</div>
+        
+        <!-- DIRECT FOOTER CONTACT LINKS -->
+        <div class="flex justify-center items-center gap-6 mt-4 text-slate-400">
+            <a href="https://wa.me/573504044246?text=Hola%20Asesor%20Ziram" target="_blank" class="hover:text-emerald-400 transition-colors flex items-center gap-1.5">
+                <i class="fa-brands fa-whatsapp text-emerald-400"></i> Asesor Ziram (+57 350 404 4246)
+            </a>
+            <a href="https://wa.me/573150612701?text=Hola%20Asesora%20Maribel" target="_blank" class="hover:text-emerald-400 transition-colors flex items-center gap-1.5">
+                <i class="fa-brands fa-whatsapp text-emerald-400"></i> Asesora Maribel (+57 315 061 2701)
+            </a>
+        </div>
+    </footer>
+
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // DEFAULT INITIAL DATA
+        const defaultProducts = [
+            { id: 1, name: "Soporte Ajustable para Audífonos Gamer", price: 65000, image: "fa-headset", desc: "Soporte ergonómico impreso en PETG de alta densidad." },
+            { id: 2, name: "Llavero Hexagonal Personalizado MODULA", price: 25000, image: "fa-key", desc: "Llavero técnico con relieve en PLA Silk." },
+            { id: 3, name: "Dock Organizador Múltiple de Escritorio", price: 85000, image: "fa-cubes-stacked", desc: "Organizador modular para celular y accesorios." }
+        ];
+
+        let products = [];
+        let cart = [];
+        let sloganText = "INNOVA, PERSONALIZA Y DISFRUTA";
+        let whatsappNum = "+57 350 404 4246";
+
+        // ThreeJS variables
+        let scene, camera, renderer, mesh3D;
+
+        window.onload = function() {
+            loadSavedData();
+            renderAllViews();
+            init3D();
+        };
+
+        // WHATSAPP POPUP TOGGLE
+        function toggleWaMenu() {
+            document.getElementById('wa-advisor-menu')?.classList.toggle('hidden');
+        }
+
+        // LOCAL STORAGE LOAD/SAVE
+        function loadSavedData() {
+            const savedProducts = localStorage.getItem('modula_products');
+            const savedSlogan = localStorage.getItem('modula_slogan');
+            const savedWa = localStorage.getItem('modula_wa');
+
+            products = savedProducts ? JSON.parse(savedProducts) : defaultProducts;
+            if (savedSlogan) sloganText = savedSlogan;
+            if (savedWa) whatsappNum = savedWa;
+
+            document.getElementById('brand-slogan').innerText = sloganText;
+            document.getElementById('footer-slogan').innerText = sloganText;
+        }
+
+        function formatCOP(num) {
+            return '$' + Number(num).toLocaleString('es-CO') + ' COP';
+        }
+
+        function renderAllViews() {
+            renderFeatured();
+            renderFullCatalog();
+        }
+
+        function createProductCard(p) {
+            return `
+                <div class="bg-modula-card border border-modula-border rounded-2xl p-5 flex flex-col justify-between">
+                    <div>
+                        <div class="aspect-square bg-slate-950 rounded-xl border border-slate-800 flex items-center justify-center mb-4">
+                            <i class="fa-solid ${p.image || 'fa-cube'} text-5xl text-modula-blue"></i>
+                        </div>
+                        <h3 class="font-bold text-white text-base">${p.name}</h3>
+                        <p class="text-slate-400 text-xs mt-1">${p.desc || ''}</p>
+                    </div>
+                    <div class="pt-4 mt-4 border-t border-slate-800 flex items-center justify-between">
+                        <div class="font-mono font-bold text-modula-cyan text-lg">${formatCOP(p.price)}</div>
+                        <button onclick="addToCart(${p.id})" class="px-3 py-1.5 bg-modula-blue/20 border border-modula-blue text-modula-cyan rounded-lg text-xs font-bold hover:bg-modula-blue hover:text-slate-950">
+                            Agregar
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderFeatured() {
+            const grid = document.getElementById('home-featured-grid');
+            if (grid) grid.innerHTML = products.map(p => createProductCard(p)).join('');
+        }
+
+        function renderFullCatalog() {
+            const grid = document.getElementById('catalog-grid');
+            const search = document.getElementById('catalog-search')?.value.toLowerCase() || '';
+            if (!grid) return;
+
+            let filtered = products.filter(p => p.name.toLowerCase().includes(search));
+            grid.innerHTML = filtered.map(p => createProductCard(p)).join('');
+        }
+
+        // NAVIGATION
+        function showPage(pageId) {
+            document.querySelectorAll('.page-view').forEach(p => p.classList.add('hidden'));
+            document.getElementById('page-' + pageId)?.classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function toggleMobileMenu() {
+            document.getElementById('mobile-menu')?.classList.toggle('hidden');
+        }
+
+        // CART LOGIC
+        function addToCart(id) {
+            const p = products.find(prod => prod.id === id);
+            if (!p) return;
+            cart.push({ ...p });
+            updateCartUI();
+            toggleCartModal(true);
+        }
+
+        function updateCartUI() {
+            document.getElementById('cart-badge').innerText = cart.length;
+            const container = document.getElementById('cart-items-container');
+            if (!container) return;
+
+            if (cart.length === 0) {
+                container.innerHTML = `<div class="text-center py-8 text-slate-500 text-xs">El carrito está vacío.</div>`;
+            } else {
+                container.innerHTML = cart.map((item, index) => `
+                    <div class="bg-slate-900 border border-slate-800 p-3 rounded-xl flex justify-between items-center">
+                        <div>
+                            <div class="text-xs font-bold text-white">${item.name}</div>
+                            <div class="text-xs font-mono text-modula-cyan">${formatCOP(item.price)}</div>
+                        </div>
+                        <button onclick="removeItem(${index})" class="text-red-400 text-xs"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                `).join('');
+            }
+
+            const total = cart.reduce((sum, item) => sum + item.price, 0);
+            document.getElementById('cart-total-display').innerText = formatCOP(total);
+        }
+
+        function removeItem(index) {
+            cart.splice(index, 1);
+            updateCartUI();
+        }
+
+        function toggleCartModal(forceOpen = false) {
+            const drawer = document.getElementById('cart-drawer');
+            if (forceOpen || drawer.classList.contains('opacity-0')) {
+                drawer.classList.remove('opacity-0', 'pointer-events-none');
+            } else {
+                drawer.classList.add('opacity-0', 'pointer-events-none');
+            }
+        }
+
+        function openCheckout() {
+            if (cart.length === 0) return alert("Tu carrito está vacío.");
+            
+            let itemsText = cart.map(i => `- ${i.name} (${formatCOP(i.price)})`).join('%0A');
+            let total = cart.reduce((sum, i) => sum + i.price, 0);
+            let message = `Hola MODULA! Quisiera realizar el pedido de los siguientes productos:%0A%0A${itemsText}%0A%0ATotal: ${formatCOP(total)}`;
+            
+            // Abre directamente con el Asesor Ziram
+            window.open(`https://wa.me/573504044246?text=${message}`, '_blank');
+        }
+
+        // ADMIN PANEL / EDIT PRICES
+        function openAdminModal() {
+            const container = document.getElementById('admin-products-list');
+            document.getElementById('edit-slogan-input').value = sloganText;
+            document.getElementById('edit-whatsapp-input').value = whatsappNum;
+
+            container.innerHTML = products.map((p, index) => `
+                <div class="bg-slate-900 border border-slate-800 p-3 rounded-xl space-y-2 text-xs">
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                        <div>
+                            <label class="text-slate-400 text-[10px]">Nombre</label>
+                            <input type="text" value="${p.name}" onchange="products[${index}].name = this.value" class="w-full bg-slate-950 border border-slate-700 rounded p-1.5 text-white">
+                        </div>
+                        <div>
+                            <label class="text-slate-400 text-[10px]">Precio COP ($)</label>
+                            <input type="number" value="${p.price}" onchange="products[${index}].price = Number(this.value)" class="w-full bg-slate-950 border border-slate-700 rounded p-1.5 text-modula-cyan font-mono font-bold">
+                        </div>
+                        <div class="flex items-end">
+                            <button onclick="deleteProductFromAdmin(${index})" class="w-full py-1.5 bg-red-500/20 text-red-400 border border-red-500/30 rounded font-bold">Eliminar</button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+
+            document.getElementById('admin-modal').classList.remove('hidden');
+        }
+
+        function closeAdminModal() {
+            document.getElementById('admin-modal').classList.add('hidden');
+        }
+
+        function addNewProductToCatalog() {
+            products.push({
+                id: Date.now(),
+                name: "Nuevo Producto Modula",
+                price: 30000,
+                image: "fa-cube",
+                desc: "Descripción del producto..."
+            });
+            openAdminModal();
+        }
+
+        function deleteProductFromAdmin(index) {
+            products.splice(index, 1);
+            openAdminModal();
+        }
+
+        function saveAdminChanges() {
+            sloganText = document.getElementById('edit-slogan-input').value;
+            whatsappNum = document.getElementById('edit-whatsapp-input').value;
+
+            localStorage.setItem('modula_products', JSON.stringify(products));
+            localStorage.setItem('modula_slogan', sloganText);
+            localStorage.setItem('modula_wa', whatsappNum);
+
+            document.getElementById('brand-slogan').innerText = sloganText;
+            document.getElementById('footer-slogan').innerText = sloganText;
+
+            renderAllViews();
+            closeAdminModal();
+            alert("¡Cambios de precios y productos guardados en tu web!");
+        }
+
+        function resetDefaultData() {
+            if (confirm("¿Deseas restablecer los precios y productos iniciales?")) {
+                localStorage.clear();
+                loadSavedData();
+                renderAllViews();
+                closeAdminModal();
+            }
+        }
+
+        // 3D CANVAS
+        function init3D() {
+            const container = document.getElementById('three-container');
+            if (!container) return;
+
+            scene = new THREE.Scene();
+            camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000);
+            camera.position.set(0, 2, 5);
+
+            renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+            renderer.setSize(container.clientWidth, container.clientHeight);
+            container.appendChild(renderer.domElement);
+
+            const light = new THREE.DirectionalLight(0x00e5ff, 1.5);
+            light.position.set(5, 5, 5);
+            scene.add(light);
+            scene.add(new THREE.AmbientLight(0xffffff, 0.5));
+
+            const geom = new THREE.CylinderGeometry(1, 1, 0.4, 6);
+            const mat = new THREE.MeshStandardMaterial({ color: 0x00e5ff, roughness: 0.3 });
+            mesh3D = new THREE.Mesh(geom, mat);
+            scene.add(mesh3D);
+
+            function animate() {
+                requestAnimationFrame(animate);
+                if (mesh3D) mesh3D.rotation.y += 0.01;
+                renderer.render(scene, camera);
+            }
+            animate();
+        }
+
+        function set3DColor(hex) {
+            if (mesh3D) mesh3D.material.color.set(hex);
+        }
+
+        function updateCustomizerPrice() {
+            const select = document.getElementById('custom-material-select');
+            const price = select.options[select.selectedIndex].getAttribute('data-price');
+            document.getElementById('custom-price-display').innerText = formatCOP(price);
+        }
+
+        function addCustomToCart() {
+            const select = document.getElementById('custom-material-select');
+            const price = Number(select.options[select.selectedIndex].getAttribute('data-price'));
+            const text = document.getElementById('custom-text-input').value;
+
+            cart.push({
+                id: Date.now(),
+                name: `Pieza 3D Custom (${text})`,
+                price: price,
+                image: 'fa-wand-magic-sparkles'
+            });
+
+            updateCartUI();
+            toggleCartModal(true);
+        }
+
+        function calculateShip() {
+            const city = document.getElementById('ship-city').value;
+            const cost = city === 'bogota' || city === 'zipacon' ? '$8.500 COP' : '$13.000 COP';
+            document.getElementById('ship-cost-res').innerText = cost;
+        }
+    </script>
+</body>
+</html>
                   
