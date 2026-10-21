@@ -43,7 +43,7 @@
         }
 
         .neon-glow {
-            box-shadow: 0 0 20px rgba(0, 163, 255, 0.2);
+            box-shadow: 0 0 20px rgba(0, 163, 255, 0.25);
         }
 
         .bg-grid {
@@ -62,39 +62,53 @@
         <span>Envíos nacionales por Interrapidísimo (Gratis por compras superiores a $150.000 COP) | Internacionales por Amazon</span>
     </div>
 
-    <!-- ENCABEZADO CON LOGO VECTORIAL REDISEÑADO Y MÁS ESTRECHO -->
-    <header class="py-5 px-4 text-center border-b border-modula-border bg-slate-950/90 backdrop-blur-md sticky top-0 z-50">
-        <div class="max-w-3xl mx-auto flex flex-col items-center justify-center">
+    <!-- ENCABEZADO CON LOGO Y DATOS EN COSTADOS -->
+    <header class="py-5 px-4 border-b border-modula-border bg-slate-950/90 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
             
-            <!-- CONTENEDOR DEL LOGO MODULA ESTRECHO -->
-            <div class="bg-black border border-modula-blue/40 rounded-2xl p-3 px-6 neon-glow flex flex-col items-center max-w-[240px] w-full">
-                <!-- SVG FIEL AL LOGO ORIGINAL -->
-                <svg viewBox="0 0 200 210" class="w-24 h-24">
-                    <!-- Extrusor / Boquilla Superior -->
-                    <rect x="85" y="5" width="30" height="15" fill="#00A3FF" stroke="#000000" stroke-width="2" rx="3" />
-                    <rect x="92" y="20" width="16" height="10" fill="#FFFFFF" stroke="#000000" stroke-width="2" />
-                    <polygon points="100,38 88,30 112,30" fill="#00A3FF" stroke="#000000" stroke-width="2" />
+            <!-- COSTADO IZQUIERDO: HORARIO DE SERVICIO -->
+            <div class="text-center md:text-left text-xs text-slate-300 space-y-0.5 md:w-1/3">
+                <div class="font-bold text-modula-cyan uppercase tracking-wider text-[11px] flex items-center justify-center md:justify-start gap-1.5">
+                    <i class="fa-regular fa-clock"></i> HORARIO DE SERVICIO
+                </div>
+                <div class="text-slate-200 font-medium">Lunes a sábado de 7am - 6pm</div>
+            </div>
 
-                    <!-- Borde Exterior Azul -->
-                    <polygon points="100,42 165,75 165,140 100,175 35,140 35,75" fill="#00A3FF" />
-                    <!-- Capa Negra Interior -->
-                    <polygon points="100,48 158,78 158,136 100,168 42,136 42,78" fill="#000000" />
-                    <!-- Capa Blanca Interior -->
-                    <polygon points="100,56 150,82 150,130 100,160 50,130 50,82" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linejoin="round" />
-                    <!-- Líneas Internas Graduadas -->
-                    <polygon points="100,66 140,88 140,124 100,150 60,124 60,88" fill="none" stroke="#00A3FF" stroke-width="4" stroke-linejoin="round" />
-                    <polygon points="100,76 130,94 130,118 100,140 70,118 70,94" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linejoin="round" />
-                    <!-- Núcleo Hexagonal -->
-                    <polygon points="100,88 118,98 118,112 100,122 82,112 82,98" fill="#00A3FF" stroke="#FFFFFF" stroke-width="2" />
+            <!-- CENTRO: LOGO MODULA COMPACTO -->
+            <div class="bg-black border border-modula-blue/50 rounded-2xl p-2.5 px-5 neon-glow flex flex-col items-center w-full max-w-[200px]">
+                <svg viewBox="0 0 120 130" class="w-20 h-20">
+                    <!-- Capa 1: Exterior Azul -->
+                    <rect x="10" y="10" width="100" height="100" fill="#00A3FF" rx="12" />
+                    <!-- Capa 2: Negro -->
+                    <rect x="16" y="16" width="88" height="88" fill="#000000" rx="9" />
+                    <!-- Capa 3: Blanco -->
+                    <rect x="23" y="23" width="74" height="74" fill="#FFFFFF" rx="7" />
+                    <!-- Capa 4: Negro -->
+                    <rect x="30" y="30" width="60" height="60" fill="#000000" rx="5" />
+                    <!-- Capa 5: Blanco -->
+                    <rect x="38" y="38" width="44" height="44" fill="#FFFFFF" rx="3" />
+                    <!-- Capa 6: Negro -->
+                    <rect x="46" y="46" width="28" height="28" fill="#000000" rx="2" />
+                    <!-- Capa 7: Blanco -->
+                    <rect x="52" y="52" width="16" height="16" fill="#FFFFFF" rx="1" />
+                    <!-- Centro: Cuadrado Pequeño Azul -->
+                    <rect x="56" y="56" width="8" height="8" fill="#00A3FF" />
                 </svg>
 
-                <!-- Tipografía Oficial MODULA -->
-                <div class="text-2xl font-black tracking-widest text-white font-mono mt-1">
+                <div class="text-xl font-black tracking-widest text-white font-mono mt-1">
                     MODUL<span class="text-modula-cyan">A</span>
                 </div>
-                <div class="text-[8px] tracking-widest text-modula-cyan font-bold uppercase mt-0.5">
+                <div class="text-[7.5px] tracking-widest text-modula-cyan font-bold uppercase">
                     INNOVA, PERSONALIZA Y DISFRUTA
                 </div>
+            </div>
+
+            <!-- COSTADO DERECHO / IZQUIERDO SEGÚN INDICACIÓN: SEDE PRINCIPAL -->
+            <div class="text-center md:text-right text-xs text-slate-300 space-y-0.5 md:w-1/3">
+                <div class="font-bold text-modula-cyan uppercase tracking-wider text-[11px] flex items-center justify-center md:justify-end gap-1.5">
+                    <i class="fa-solid fa-location-dot"></i> SEDE PRINCIPAL
+                </div>
+                <div class="text-slate-200 font-medium">Cachipay, Cundinamarca, Col.</div>
             </div>
 
         </div>
@@ -112,18 +126,30 @@
                 Diseñamos artículos personalizados, modelos 3D únicos e impresiones de alta precisión. Vendemos accesorios y tecnología <strong>por unidad y al por mayor</strong>.
             </p>
 
-            <!-- GALERÍA DE MODELOS 3D E IMPRESIÓN ADITIVA -->
+            <!-- MUESTRA DE DISEÑOS Y MODELADO 3D -->
             <div class="space-y-3 pt-2">
-                <span class="text-modula-cyan font-mono text-xs font-bold uppercase tracking-widest">Ejemplos de Modelos e Impresiones 3D</span>
-                <div class="grid grid-cols-3 gap-3 max-w-xl mx-auto">
-                    <div class="aspect-square bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden group">
-                        <img src="https://images.unsplash.com/photo-1615840241336-7939614824c7?auto=format&fit=crop&w=400&q=80" alt="Piezas 3D de alta precisión" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                <span class="text-modula-cyan font-mono text-xs font-bold uppercase tracking-widest">Ejemplos de Diseños y Modelado 3D</span>
+                <div class="grid grid-cols-2 sm:grid-cols-2 gap-4 max-w-lg mx-auto">
+                    <!-- Modelo 1: Traje / Astronauta / Figura 3D -->
+                    <div class="bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden p-2 space-y-1">
+                        <div class="aspect-square rounded-xl overflow-hidden bg-slate-900 flex items-center justify-center">
+                            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=500&q=80" 
+                                 onerror="this.src='https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=500&q=80'" 
+                                 alt="Modelo 3D Completo" 
+                                 class="w-full h-full object-cover">
+                        </div>
+                        <div class="text-[11px] font-bold text-slate-300 text-center">Diseño de Personajes y Trajes 3D</div>
                     </div>
-                    <div class="aspect-square bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden group">
-                        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=400&q=80" alt="Diseño de prototipos 3D" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-                    </div>
-                    <div class="aspect-square bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden group">
-                        <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=400&q=80" alt="Modelos y figuras articuladas" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+
+                    <!-- Modelo 2: Malla / Escultura / Craneo 3D CAD -->
+                    <div class="bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden p-2 space-y-1">
+                        <div class="aspect-square rounded-xl overflow-hidden bg-slate-900 flex items-center justify-center">
+                            <img src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?auto=format&fit=crop&w=500&q=80" 
+                                 onerror="this.src='https://images.unsplash.com/photo-1615840241336-7939614824c7?auto=format&fit=crop&w=500&q=80'" 
+                                 alt="Malla 3D CAD" 
+                                 class="w-full h-full object-cover">
+                        </div>
+                        <div class="text-[11px] font-bold text-slate-300 text-center">Modelado Anatómico y Malla 3D</div>
                     </div>
                 </div>
             </div>
