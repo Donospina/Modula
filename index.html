@@ -109,7 +109,7 @@
                     <button onclick="showPage('home')" class="text-slate-300 hover:text-modula-cyan transition-colors text-sm font-medium">Inicio</button>
                     <button onclick="showPage('catalog')" class="text-slate-300 hover:text-modula-cyan transition-colors text-sm font-medium">Catálogo</button>
                     <button onclick="showPage('customizer')" class="text-modula-cyan font-bold hover:underline transition-colors text-sm flex items-center gap-1">
-                        <i class="fa-solid fa-cube text-xs"></i> Explorar Diseños 3D
+                        <i class="fa-solid fa-cube text-xs"></i> Cotizar Mi Pieza 3D
                     </button>
                     <button onclick="showPage('shipping')" class="text-slate-300 hover:text-modula-cyan transition-colors text-sm font-medium">Cotizador Colombia</button>
                     
@@ -141,7 +141,7 @@
         <div id="mobile-menu" class="hidden md:hidden bg-slate-950 border-b border-modula-border px-4 py-4 space-y-3">
             <button onclick="showPage('home'); toggleMobileMenu()" class="block w-full text-left py-1 text-slate-200">Inicio</button>
             <button onclick="showPage('catalog'); toggleMobileMenu()" class="block w-full text-left py-1 text-slate-200">Catálogo de Productos</button>
-            <button onclick="showPage('customizer'); toggleMobileMenu()" class="block w-full text-left py-1 text-modula-cyan font-bold">Explorar Diseños 3D</button>
+            <button onclick="showPage('customizer'); toggleMobileMenu()" class="block w-full text-left py-1 text-modula-cyan font-bold">Cotizar Mi Pieza 3D</button>
             <button onclick="showPage('shipping'); toggleMobileMenu()" class="block w-full text-left py-1 text-slate-200">Calculadora de Envíos</button>
             <button onclick="openAdminModal(); toggleMobileMenu()" class="block w-full text-left py-2 text-amber-400 font-bold border-t border-slate-800">⚙️ Editor de Precios y Productos</button>
         </div>
@@ -217,43 +217,43 @@
 
         <!-- ================= PAGE 3: BAMBU LAB MODEL EXPLORER ================= -->
         <section id="page-customizer" class="page-view hidden py-12 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto space-y-8">
-            <div class="text-center space-y-2">
-                <span class="text-modula-cyan font-mono text-xs uppercase font-bold">Catálogo Oficial Bambu Lab</span>
-                <h1 class="text-3xl sm:text-4xl font-extrabold text-white">¿Cómo solicitar tu Modelo 3D?</h1>
-                <p class="text-slate-400 text-sm max-w-lg mx-auto">Explora millones de diseños en la plataforma oficial de Bambu Lab, escoge tu favorito y nosotros lo imprimimos en la más alta calidad.</p>
+            <div class="text-center space-y-3">
+                <span class="text-modula-cyan font-mono text-xs uppercase font-bold tracking-wider">Catálogo 3D MakerWorld</span>
+                <h1 class="text-3xl sm:text-4xl font-extrabold text-white">A continuación te enviaremos para que puedas elegir el modelo que quieras.</h1>
+                <p class="text-slate-400 text-sm max-w-xl mx-auto">Selecciona tu diseño favorito en la biblioteca oficial de Bambu Lab, toma una captura de pantalla con su nombre y envíanosla por WhatsApp para cotizarte al instante.</p>
             </div>
 
             <!-- Paso a Paso para el cliente -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div class="bg-modula-card border border-modula-border rounded-2xl p-6 text-center space-y-3 relative">
                     <div class="w-12 h-12 bg-modula-blue/10 border border-modula-blue text-modula-cyan rounded-full flex items-center justify-center font-bold text-lg mx-auto">1</div>
-                    <h3 class="font-bold text-white text-base">Explora el Catálogo</h3>
-                    <p class="text-slate-400 text-xs">Entra a MakerWorld haciendo clic en el botón de abajo y busca la figura, accesorio o pieza que deseas.</p>
+                    <h3 class="font-bold text-white text-base">Elige tu Modelo</h3>
+                    <p class="text-slate-400 text-xs">Haz clic en el botón de abajo para ir al catálogo de diseños de Bambu Lab.</p>
                 </div>
 
                 <div class="bg-modula-card border border-modula-border rounded-2xl p-6 text-center space-y-3 relative">
                     <div class="w-12 h-12 bg-modula-cyan/10 border border-modula-cyan text-modula-cyan rounded-full flex items-center justify-center font-bold text-lg mx-auto">2</div>
                     <h3 class="font-bold text-white text-base">Toma un Pantallazo</h3>
-                    <p class="text-slate-400 text-xs">Captura la pantalla de tu celular mostrando la foto y el nombre claro del modelo escogido.</p>
+                    <p class="text-slate-400 text-xs">Toma captura a la pantalla del celular mostrando el nombre del diseño escogido.</p>
                 </div>
 
                 <div class="bg-modula-card border border-modula-border rounded-2xl p-6 text-center space-y-3 relative">
                     <div class="w-12 h-12 bg-emerald-500/10 border border-emerald-500 text-emerald-400 rounded-full flex items-center justify-center font-bold text-lg mx-auto">3</div>
-                    <h3 class="font-bold text-white text-base">Envíalo a WhatsApp</h3>
-                    <p class="text-slate-400 text-xs">Envíanos el pantallazo a nuestros asesores. Lo cargaremos en Bambu Studio y te daremos cotización inmediata.</p>
+                    <h3 class="font-bold text-white text-base">Envía la Imagen</h3>
+                    <p class="text-slate-400 text-xs">Envíanos el pantallazo a WhatsApp. Lo cargaremos en Bambu Studio para darle el precio exacto.</p>
                 </div>
             </div>
 
-            <!-- Botón Gigante de Redirección -->
+            <!-- Botón de Redirección Directa a MakerWorld BambuLab -->
             <div class="bg-gradient-to-r from-slate-900 via-slate-950 to-slate-900 border border-modula-blue/30 rounded-3xl p-8 text-center space-y-6 shadow-2xl">
                 <i class="fa-solid fa-cubes-stacked text-5xl text-modula-cyan"></i>
                 <div>
-                    <h2 class="text-2xl font-bold text-white">¿Listo para buscar tu diseño favorito?</h2>
-                    <p class="text-slate-400 text-xs mt-1">Serás redirigido a MakerWorld (Plataforma oficial de impresión 3D para impresoras Bambu Lab).</p>
+                    <h2 class="text-2xl font-bold text-white">¿Listo para elegir tu modelo 3D?</h2>
+                    <p class="text-slate-400 text-xs mt-1">Haz clic abajo para ir directamente al catálogo de MakerWorld (@BambuLab).</p>
                 </div>
 
-                <a href="https://makerworld.com/es" target="_blank" class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-gradient-to-r from-modula-blue to-modula-cyan text-slate-950 font-black text-base hover:scale-105 hover:shadow-xl hover:shadow-modula-blue/20 transition-all">
-                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Explorar Catálogo de Modelos 3D
+                <a href="https://makerworld.com/es/@BambuLab" target="_blank" class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-gradient-to-r from-modula-blue to-modula-cyan text-slate-950 font-black text-base hover:scale-105 hover:shadow-xl hover:shadow-modula-blue/20 transition-all">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Ir a Elegir Mi Modelo 3D (@BambuLab)
                 </a>
             </div>
         </section>
@@ -665,4 +665,3 @@
     </script>
 </body>
 </html>
-                  
