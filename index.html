@@ -74,36 +74,45 @@
                 <div class="text-slate-200 font-medium">Lunes a sábado de 7am - 6pm</div>
             </div>
 
-            <!-- CENTRO: LOGO MODULA COMPACTO -->
-            <div class="bg-black border border-modula-blue/50 rounded-2xl p-2.5 px-5 neon-glow flex flex-col items-center w-full max-w-[200px]">
-                <svg viewBox="0 0 120 130" class="w-20 h-20">
-                    <!-- Capa 1: Exterior Azul -->
-                    <rect x="10" y="10" width="100" height="100" fill="#00A3FF" rx="12" />
-                    <!-- Capa 2: Negro -->
-                    <rect x="16" y="16" width="88" height="88" fill="#000000" rx="9" />
-                    <!-- Capa 3: Blanco -->
-                    <rect x="23" y="23" width="74" height="74" fill="#FFFFFF" rx="7" />
-                    <!-- Capa 4: Negro -->
-                    <rect x="30" y="30" width="60" height="60" fill="#000000" rx="5" />
-                    <!-- Capa 5: Blanco -->
-                    <rect x="38" y="38" width="44" height="44" fill="#FFFFFF" rx="3" />
-                    <!-- Capa 6: Negro -->
-                    <rect x="46" y="46" width="28" height="28" fill="#000000" rx="2" />
-                    <!-- Capa 7: Blanco -->
-                    <rect x="52" y="52" width="16" height="16" fill="#FFFFFF" rx="1" />
-                    <!-- Centro: Cuadrado Pequeño Azul -->
-                    <rect x="56" y="56" width="8" height="8" fill="#00A3FF" />
-                </svg>
+            <!-- CENTRO: LOGO MODULA HEXAGONAL CON AGUJA 3D -->
+            <div class="flex flex-col items-center justify-center w-full max-w-[210px]">
+                <svg viewBox="0 0 200 230" class="w-36 h-auto drop-shadow-[0_0_12px_rgba(0,163,255,0.4)]">
+                    <!-- Silueta / Fondo Borde Azul Exterior -->
+                    <path d="M70,12 L130,12 L140,28 L140,48 L178,72 L178,145 L100,190 L22,145 L22,72 L60,48 L60,28 Z" fill="#00A3FF"/>
+                    <!-- Fondo Negro Interior -->
+                    <path d="M73,16 L127,16 L136,30 L136,50 L173,74 L173,142 L100,185 L27,142 L27,74 L64,50 L64,30 Z" fill="#000000"/>
 
-                <div class="text-xl font-black tracking-widest text-white font-mono mt-1">
-                    MODUL<span class="text-modula-cyan">A</span>
-                </div>
-                <div class="text-[7.5px] tracking-widest text-modula-cyan font-bold uppercase">
-                    INNOVA, PERSONALIZA Y DISFRUTA
-                </div>
+                    <!-- Boquilla / Aguja Extrusora Superior -->
+                    <rect x="86" y="20" width="28" height="10" fill="#00A3FF" rx="2" />
+                    <rect x="91" y="30" width="18" height="8" fill="#FFFFFF" />
+                    <polygon points="100,45 92,38 108,38" fill="#00A3FF" />
+
+                    <!-- Capas Hexagonales Internas (Efecto Impresión Aditiva) -->
+                    <!-- Capa Blanca 1 -->
+                    <path d="M100,52 L163,80 L163,136 L100,175 L37,136 L37,80 Z" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linejoin="round"/>
+                    <!-- Capa Negra Intermedia -->
+                    <path d="M100,60 L155,84 L155,130 L100,166 L45,130 L45,84 Z" fill="none" stroke="#000000" stroke-width="4" stroke-linejoin="round"/>
+                    <!-- Capa Azul 2 -->
+                    <path d="M100,68 L147,89 L147,125 L100,157 L53,125 L53,89 Z" fill="none" stroke="#00A3FF" stroke-width="4" stroke-linejoin="round"/>
+                    <!-- Capa Blanca 3 -->
+                    <path d="M100,76 L139,94 L139,120 L100,148 L61,120 L61,94 Z" fill="none" stroke="#FFFFFF" stroke-width="3.5" stroke-linejoin="round"/>
+                    
+                    <!-- Núcleo Hexagonal Central -->
+                    <polygon points="100,88 123,98 123,118 100,128 77,118 77,98" fill="#00A3FF" stroke="#000000" stroke-width="2"/>
+                    <polygon points="100,92 118,100 118,116 100,124 82,116 82,100" fill="#070A12"/>
+
+                    <!-- Placa Base Inferior de Marca -->
+                    <path d="M10,180 L190,180 L180,222 L20,222 Z" fill="#00A3FF"/>
+                    <path d="M13,183 L187,183 L178,219 L22,219 Z" fill="#000000"/>
+                    
+                    <!-- Texto MODULA -->
+                    <text x="100" y="202" font-family="'Inter', sans-serif" font-weight="900" font-size="20" fill="#FFFFFF" text-anchor="middle" letter-spacing="2">MODULA</text>
+                    <!-- Slogan Inferior -->
+                    <text x="100" y="214" font-family="'Inter', sans-serif" font-weight="700" font-size="7" fill="#00E5FF" text-anchor="middle" letter-spacing="0.8">INNOVA, PERSONALIZA Y DISFRUTA</text>
+                </svg>
             </div>
 
-            <!-- COSTADO DERECHO / IZQUIERDO SEGÚN INDICACIÓN: SEDE PRINCIPAL -->
+            <!-- COSTADO DERECHO: SEDE PRINCIPAL -->
             <div class="text-center md:text-right text-xs text-slate-300 space-y-0.5 md:w-1/3">
                 <div class="font-bold text-modula-cyan uppercase tracking-wider text-[11px] flex items-center justify-center md:justify-end gap-1.5">
                     <i class="fa-solid fa-location-dot"></i> SEDE PRINCIPAL
@@ -130,7 +139,7 @@
             <div class="space-y-3 pt-2">
                 <span class="text-modula-cyan font-mono text-xs font-bold uppercase tracking-widest">Ejemplos de Diseños y Modelado 3D</span>
                 <div class="grid grid-cols-2 sm:grid-cols-2 gap-4 max-w-lg mx-auto">
-                    <!-- Modelo 1: Traje / Astronauta / Figura 3D -->
+                    <!-- Modelo 1 -->
                     <div class="bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden p-2 space-y-1">
                         <div class="aspect-square rounded-xl overflow-hidden bg-slate-900 flex items-center justify-center">
                             <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=500&q=80" 
@@ -141,7 +150,7 @@
                         <div class="text-[11px] font-bold text-slate-300 text-center">Diseño de Personajes y Trajes 3D</div>
                     </div>
 
-                    <!-- Modelo 2: Malla / Escultura / Craneo 3D CAD -->
+                    <!-- Modelo 2 -->
                     <div class="bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden p-2 space-y-1">
                         <div class="aspect-square rounded-xl overflow-hidden bg-slate-900 flex items-center justify-center">
                             <img src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?auto=format&fit=crop&w=500&q=80" 
