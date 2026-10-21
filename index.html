@@ -43,7 +43,7 @@
         }
 
         .neon-glow {
-            box-shadow: 0 0 20px rgba(0, 163, 255, 0.2);
+            box-shadow: 0 0 25px rgba(0, 163, 255, 0.25);
         }
 
         .bg-grid {
@@ -56,47 +56,38 @@
 </head>
 <body class="bg-grid min-h-screen flex flex-col justify-between selection:bg-modula-blue selection:text-white">
 
-    <!-- BARRA SUPERIOR DE ENVIOS -->
+    <!-- BARRA SUPERIOR DE ENVÍOS -->
     <div class="bg-gradient-to-r from-modula-blue via-cyan-500 to-blue-600 text-slate-950 font-bold text-xs py-2 px-4 text-center tracking-wide flex items-center justify-center gap-2 shadow-md">
         <i class="fa-solid fa-truck-fast text-sm"></i>
         <span>¡Envíos a todo Colombia! | Envío GRATIS en compras superiores a $150.000 COP</span>
     </div>
 
-    <!-- ENCABEZADO PRINCIPAL DE LA MARCA -->
-    <header class="py-8 px-4 text-center border-b border-modula-border bg-slate-950/80 backdrop-blur-md sticky top-0 z-50">
-        <div class="max-w-4xl mx-auto flex flex-col items-center justify-center gap-2">
-            <!-- LOGO MODULA -->
-            <div class="w-16 h-16 bg-modula-card border border-modula-blue/50 rounded-2xl flex items-center justify-center p-2 neon-glow">
-                <svg viewBox="0 0 100 100" class="w-full h-full">
-                    <rect x="35" y="5" width="30" height="12" rx="2" fill="#00A3FF" />
-                    <polygon points="40,17 60,17 50,28" fill="#FFFFFF" />
-                    <polygon points="50,32 75,46 75,74 50,88 25,74 25,46" fill="none" stroke="#00E5FF" stroke-width="4" />
-                    <polygon points="50,40 68,50 68,70 50,80 32,70 32,50" fill="none" stroke="#FFFFFF" stroke-width="3" />
-                    <polygon points="50,48 60,54 60,66 50,72 40,66 40,54" fill="#00A3FF" opacity="0.9" />
-                </svg>
+    <!-- ENCABEZADO PRINCIPAL CON TU LOGO OFICIAL -->
+    <header class="py-8 px-4 text-center border-b border-modula-border bg-slate-950/90 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-4xl mx-auto flex flex-col items-center justify-center gap-3">
+            <!-- CONTENEDOR DEL LOGO OFICIAL MODULA -->
+            <div class="w-32 sm:w-44 h-auto p-2 bg-slate-900/80 border border-modula-blue/40 rounded-2xl neon-glow flex items-center justify-center">
+                <img src="logo_modula.png" onError="this.onerror=null;this.src='https://i.ibb.co/LhbM1y0/modula-logo.png';" alt="MODULA Logo Oficial" class="w-full h-auto object-contain">
             </div>
-            <h1 class="text-3xl sm:text-4xl font-black tracking-wider text-white font-mono mt-1">
-                MODUL<span class="text-modula-cyan">A</span>
-            </h1>
-            <p class="text-xs tracking-widest text-modula-cyan font-bold uppercase">
+            <p class="text-xs tracking-widest text-modula-cyan font-bold uppercase mt-1">
                 INNOVA, PERSONALIZA Y DISFRUTA
             </p>
         </div>
     </header>
 
-    <!-- CONTENIDO PRINCIPAL -->
+    <!-- CONTENIDO PRINCIPAL CONTINUO -->
     <main class="max-w-4xl mx-auto px-4 py-10 space-y-12 flex-grow">
 
         <!-- PRESENTACIÓN Y DESCRIPCIÓN -->
         <section class="text-center space-y-6">
-            <h2 class="text-2xl sm:text-3xl font-extrabold text-white leading-tight">
+            <h1 class="text-2xl sm:text-3xl font-extrabold text-white leading-tight">
                 Fabricación Aditiva, Impresión 3D y <span class="text-transparent bg-clip-text bg-gradient-to-r from-modula-blue to-modula-cyan">Accesorios de Tecnología</span>
-            </h2>
+            </h1>
             <p class="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
-                Creamos artículos personalizados, detalles únicos e impresiones en 3D de alta precisión. Además, distribuimos tecnología y accesorios para celular <strong>por unidad y al por mayor</strong> con envíos garantizados a toda Colombia.
+                Diseñamos artículos personalizados, detalles únicos e impresiones en 3D de alta precisión. Vendemos tecnología y accesorios para celular <strong>por unidad y al por mayor</strong> con despachos garantizados a toda Colombia.
             </p>
 
-            <!-- VIDEO DE IMPRESIÓN 3D -->
+            <!-- VIDEO DE IMPRESIÓN 3D EN VIVO -->
             <div class="bg-modula-card border border-modula-border rounded-3xl p-3 shadow-2xl overflow-hidden max-w-2xl mx-auto">
                 <div class="aspect-video rounded-2xl overflow-hidden bg-slate-950 relative">
                     <video class="w-full h-full object-cover" autoplay loop muted playsinline poster="https://images.unsplash.com/photo-1615840241336-7939614824c7?auto=format&fit=crop&w=800&q=80">
@@ -104,14 +95,14 @@
                         Tu navegador no soporta reproducción de video.
                     </video>
                     <div class="absolute bottom-3 left-3 bg-slate-950/80 backdrop-blur-md px-3 py-1 rounded-full text-[10px] text-modula-cyan font-mono border border-modula-blue/30">
-                        <i class="fa-solid fa-circle-play animate-pulse text-emerald-400 mr-1"></i> Tecnología de Impresión 3D en Vivo
+                        <i class="fa-solid fa-circle-play animate-pulse text-emerald-400 mr-1"></i> Tecnología de Impresión 3D
                     </div>
                 </div>
             </div>
 
             <!-- BOTÓN PRINCIPAL DE COTIZAR -->
             <div class="pt-4">
-                <a href="https://wa.me/573504044246?text=Hola%20Asesor%20Ziram,%20quiero%20cotizar%20un%20producto%20o%20diseño%20personalizado%20en%20MODULA" target="_blank" class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-gradient-to-r from-emerald-500 to-teal-400 text-slate-950 font-black text-lg hover:scale-105 shadow-xl shadow-emerald-500/20 transition-all">
+                <a href="https://wa.me/573504044246?text=Hola%20Asesor%20Ziram,%20quiero%20cotizar%20un%20producto%20o%20dise%C3%B1o%20personalizado%20en%20MODULA" target="_blank" class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-gradient-to-r from-emerald-500 to-teal-400 text-slate-950 font-black text-lg hover:scale-105 shadow-xl shadow-emerald-500/20 transition-all">
                     <i class="fa-brands fa-whatsapp text-2xl"></i> COTIZAR AHORA CON ASESOR ZIRAM
                 </a>
             </div>
@@ -122,7 +113,7 @@
             <div class="text-center space-y-2">
                 <span class="text-modula-cyan font-mono text-xs font-bold uppercase tracking-widest">Listado de Productos</span>
                 <h2 class="text-3xl font-extrabold text-white">Catálogo de Precios</h2>
-                <p class="text-slate-400 text-xs">Precios al detal (unidad) y precios especiales al por mayor.</p>
+                <p class="text-slate-400 text-xs">Consulta precios al detal (unidad) y tarifas especiales al por mayor.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -131,10 +122,10 @@
                 <div class="bg-modula-card border border-modula-border rounded-3xl p-5 space-y-4 flex flex-col justify-between hover:border-modula-blue/50 transition-all">
                     <div class="space-y-3">
                         <div class="aspect-video rounded-2xl overflow-hidden bg-slate-950 border border-slate-800">
-                            <img src="https://images.unsplash.com/photo-1601593378413-e7631336a59d?auto=format&fit=crop&w=600&q=80" alt="Fundas para celular" class="w-full h-full object-cover">
+                            <img src="https://images.unsplash.com/photo-1541877944-ac82a091518a?auto=format&fit=crop&w=800&q=80" alt="Fundas para celular" class="w-full h-full object-cover">
                         </div>
                         <h3 class="font-bold text-white text-xl">Fundas para Celulares</h3>
-                        <p class="text-slate-400 text-xs">Fundas protectoras en silicona suave y mate para diversas marcas y modelos.</p>
+                        <p class="text-slate-400 text-xs">Fundas protectoras resistentes en silicona y colores para variedad de referencias.</p>
                     </div>
                     <div class="space-y-2 pt-3 border-t border-slate-800">
                         <div class="flex justify-between items-center bg-slate-900 px-3 py-2 rounded-xl">
@@ -155,10 +146,10 @@
                 <div class="bg-modula-card border border-modula-border rounded-3xl p-5 space-y-4 flex flex-col justify-between hover:border-modula-blue/50 transition-all">
                     <div class="space-y-3">
                         <div class="aspect-video rounded-2xl overflow-hidden bg-slate-950 border border-slate-800">
-                            <img src="https://m.media-amazon.com/images/I/71R12TUnS5L._AC_SL1500_.jpg" alt="Vidrios Templados" class="w-full h-full object-cover">
+                            <img src="https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?auto=format&fit=crop&w=800&q=80" alt="Vidrios Templados" class="w-full h-full object-cover">
                         </div>
                         <h3 class="font-bold text-white text-xl">Vidrios Templados</h3>
-                        <p class="text-slate-400 text-xs">Protección de pantalla con alta dureza 9H contra caídas y rayones.</p>
+                        <p class="text-slate-400 text-xs">Protección de pantalla con cristal templado de alta resistencia contra caídas.</p>
                     </div>
                     <div class="space-y-2 pt-3 border-t border-slate-800">
                         <div class="flex justify-between items-center bg-slate-900 px-3 py-2 rounded-xl">
@@ -179,10 +170,10 @@
                 <div class="bg-modula-card border border-modula-border rounded-3xl p-5 space-y-4 flex flex-col justify-between hover:border-modula-blue/50 transition-all">
                     <div class="space-y-3">
                         <div class="aspect-video rounded-2xl overflow-hidden bg-slate-950 border border-slate-800">
-                            <img src="https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?auto=format&fit=crop&w=600&q=80" alt="Bafles Bluetooth" class="w-full h-full object-cover">
+                            <img src="https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?auto=format&fit=crop&w=800&q=80" alt="Bafles Bluetooth" class="w-full h-full object-cover">
                         </div>
                         <h3 class="font-bold text-white text-xl">Bafles y Parlantes</h3>
-                        <p class="text-slate-400 text-xs">Variedad de parlantes Bluetooth portátiles, con luces y excelente sonido.</p>
+                        <p class="text-slate-400 text-xs">Variedad de parlantes Bluetooth portátiles, con luces LED y gran fidelidad de sonido.</p>
                     </div>
                     <div class="space-y-2 pt-3 border-t border-slate-800">
                         <div class="flex justify-between items-center bg-slate-900 px-3 py-2 rounded-xl">
@@ -203,10 +194,10 @@
                 <div class="bg-modula-card border border-modula-border rounded-3xl p-5 space-y-4 flex flex-col justify-between hover:border-modula-blue/50 transition-all">
                     <div class="space-y-3">
                         <div class="aspect-video rounded-2xl overflow-hidden bg-slate-950 border border-slate-800">
-                            <img src="https://images.unsplash.com/photo-1583863788434-e58a36330cf0?auto=format&fit=crop&w=600&q=80" alt="Cargadores" class="w-full h-full object-cover">
+                            <img src="https://images.unsplash.com/photo-1583863788434-e58a36330cf0?auto=format&fit=crop&w=800&q=80" alt="Cargadores y Cables" class="w-full h-full object-cover">
                         </div>
                         <h3 class="font-bold text-white text-xl">Cargadores y Cables</h3>
-                        <p class="text-slate-400 text-xs">Adaptadores de carga rápida y cables reforzados para Android e iOS.</p>
+                        <p class="text-slate-400 text-xs">Adaptadores de carga rápida inteligente y cables reforzados para Android y iPhone.</p>
                     </div>
                     <div class="space-y-2 pt-3 border-t border-slate-800">
                         <div class="flex justify-between items-center bg-slate-900 px-3 py-2 rounded-xl">
